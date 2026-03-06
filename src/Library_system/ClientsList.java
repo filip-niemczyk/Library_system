@@ -1,10 +1,11 @@
 package Library_system;
+
 import java.util.ArrayList;
 
-public class Clients_list {
+public class ClientsList {
     private ArrayList<Client> clients;
 
-    public Clients_list() {
+    public ClientsList() {
         this.clients = new ArrayList<>();
     }
 
@@ -15,14 +16,23 @@ public class Clients_list {
 
     public void showAllClients() {
         System.out.println("\n---Customer list---");
-        for(Client client : clients) {
+        for (Client client : clients) {
             System.out.println(client);
         }
     }
 
-    public Client searchClient(String id){
-        for(Client client : clients){
-            if(client.getId().equals(id)){
+    public Client searchClient(int id) {
+        for (Client client : clients) {
+            if (client.getId() == (id)) {
+                return client;
+            }
+        }
+        return null;
+    }
+
+    public Client login(String login, String password) {
+        for (Client client : clients) {
+            if (client.verifyLogin(login, password)) {
                 return client;
             }
         }
