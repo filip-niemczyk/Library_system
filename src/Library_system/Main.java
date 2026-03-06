@@ -42,6 +42,11 @@ public class Main {
                         System.out.println("Login: ");
                         String newLog = scanner.nextLine();
 
+                        if (users.isLoginTaken(newLog)) {
+                            System.out.println("This login is already taken");
+                            continue;
+                        }
+
                         System.out.println("Password: ");
                         String newPass = scanner.nextLine();
 

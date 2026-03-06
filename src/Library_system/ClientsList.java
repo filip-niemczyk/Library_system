@@ -38,4 +38,13 @@ public class ClientsList {
         }
         return null;
     }
+
+    public boolean isLoginTaken(String login) {
+        for (Client client : clients) {
+            if (client.getLogin().equalsIgnoreCase(login)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
